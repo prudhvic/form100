@@ -15,6 +15,7 @@ body {
   display: grid;
   place-items: center;
   height: 100vh;
+
   background-color: #d6bbfb;
 }
 label {
@@ -25,13 +26,14 @@ label {
 .container {
   margin: 0 auto;
 
-  border-radius: 6px;
-  box-shadow: 0 0 5px black;
   max-width: 1200px;
 }
 form {
   display: grid;
   padding: 1em;
+  border-radius: 6px;
+  box-shadow: 0 0 5px black;
+
   background-color: #6172f3;
   grid-template-areas:
     "name email number"
@@ -103,6 +105,12 @@ button:hover {
 }
 
 @media (max-width: 800px) {
+  body {
+    overflow: hidden;
+  }
+  .btn {
+    margin-top: 0;
+  }
   form {
     grid-template-areas:
       "name"
@@ -111,9 +119,11 @@ button:hover {
       "message"
       "search"
       "submit";
-    width: 400px;
   }
-
+  .container {
+    max-width: max-content;
+    padding: 1em;
+  }
   textarea {
     max-width: 20rem;
   }
